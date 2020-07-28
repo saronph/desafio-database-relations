@@ -23,9 +23,7 @@ class Product {
   @Column('integer')
   quantity: number;
 
-  @OneToMany(() => OrdersProducts, ordersProducts => ordersProducts, {
-    cascade: true,
-  })
+  @OneToMany(() => OrdersProducts, ordersProducts => ordersProducts.product)
   order_products: OrdersProducts[];
 
   @CreateDateColumn()
